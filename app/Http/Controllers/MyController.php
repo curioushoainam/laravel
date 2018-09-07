@@ -14,6 +14,6 @@ class MyController extends Controller
 
     public function Farewell(){
     	echo "Auf Wiedersehen VHD";
-    	redirect()->route('hallo'); // call router name 'hallo'
+    	return redirect()->route('hallo'); // call router name 'hallo'
     }
 }
