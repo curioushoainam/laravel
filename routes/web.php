@@ -74,3 +74,8 @@ Route::get('CallController/{name}','MyController@Hello');
 
 Route::get('CallController2','MyController@Farewell');
 
+
+// ================================
+// Làm việc với URL trên Request
+Route::get('callReqURL','MyController@GetURL');
+
