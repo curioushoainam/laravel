@@ -72,6 +72,7 @@ Route::group(['prefix'=>'MyGroup'], function(){
 // Gọi controller MyController
 Route::get('CallController/{name}','MyController@Hello');
 
+// Call other route (it is declared in Farewell function)
 Route::get('CallController2','MyController@Farewell');
 
 
@@ -79,3 +80,13 @@ Route::get('CallController2','MyController@Farewell');
 // Làm việc với URL trên Request
 Route::get('callReqURL','MyController@GetURL');
 
+// ================================
+// call formDemo page
+Route::get('callFormDemo', function(){
+	return view('formDemo');
+});
+
+// receive data from formDemo page
+Route::post('postForm',['as'=>'postDemo', 'uses'=>'MyController@postDemo']);
+
+// ================================

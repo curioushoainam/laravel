@@ -8,6 +8,13 @@ use Illuminate\Http\Request;
 
 class MyController extends Controller
 {
+	public function viewArr($arr){
+		// this function displays $arr's content on the browser
+		echo '<pre>';
+    	print_r ($arr);
+    	echo '</pre>';
+	}
+
     public function Hello($name){
     	echo "Hallo ".$name;
     }
@@ -43,4 +50,14 @@ class MyController extends Controller
     	else
     		return 'the url does not have the letter "URL"';	
     }
+
+    public function postDemo(Request $req){
+    	// the function gets data from the page formDemo which has $_POST['txtname']  
+
+    	$this->viewArr($req->all());		// display $req's contents on the browser.
+
+    	return 'Data is '.$req->txtname;
+    }
+
+
 }
