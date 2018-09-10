@@ -99,4 +99,9 @@ Route::get('getCookie','MyController@getCookie');
 Route::get('viewUploadDemo', 'MyController@viewUploadDemo');
 
 Route::post('file-upload','MyController@fileUploadPost')->name('files.upload');
+
+// ================================
+// Demo returning json data
+Route::get('getJson', 'MyController@getJson');
+
 // ================================

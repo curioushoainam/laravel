@@ -98,8 +98,11 @@ class MyController extends Controller
     	} else {
     		echo 'File is unavailable';
     	} 
+    }
 
-
+    public function getJson(){
+    	$arr = ['myLover'=>'VHD'];
+    	return response()->json($arr);
     }
 
 
