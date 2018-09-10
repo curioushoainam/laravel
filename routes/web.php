@@ -105,3 +105,5 @@ Route::post('file-upload','MyController@fileUploadPost')->name('files.upload');
 Route::get('getJson', 'MyController@getJson');
 
 // ================================
+// demo View
+Route::get('myView', 'MyController@myView');

@@ -105,5 +105,9 @@ class MyController extends Controller
     	return response()->json($arr);
     }
 
+    public function myView(){
+    	// return view('homepage');		// the 'hompage' is the homepage.php file inside the views folder
+    	return view('myView.subView'); 	// the 'myView.subView'' means that the subView.php file inside the views/myView folder 
+    }
 
 }
