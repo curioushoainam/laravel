@@ -1,0 +1,26 @@
+#contents {
+	width: 800px;
+	height: 500px;
+	background-color: lightblue;
+	text-align: center;
+	border: 1px solid black;
+	margin: auto;
+}
+
+#header {
+	width: 800px;
+	height: 100px;
+	background-color: lightgreen;
+	text-align: center;
+	border: 1px solid black;
+	margin: auto;
+}
+
+#footer {
+	width: 800px;
+	height: 50px;
+	background-color: lightyellow;
+	text-align: center;
+	border: 1px solid black;
+	margin: auto;
+}

@@ -119,6 +119,6 @@ View::share('shValue',array('say'=>'Hallo', 'person'=>'VHD'));
 // ================================
 // introduce blade template
 // the pages will use the layouts/mainlayout for displaying on the browser
-Route::get('laravel', 'MyController@displayLaravel');
-Route::get('php', 'MyController@displayPhp');
+Route::get('bladeDemo/{str}', 'MyController@displayBladeDemo');
+
 
