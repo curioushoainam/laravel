@@ -107,3 +107,11 @@ Route::get('getJson', 'MyController@getJson');
 // ================================
 // demo View
 Route::get('myView', 'MyController@myView');
+
+// ================================
+// transfer param 'val' to MyController
+Route::get('myValue/{val}','MyController@displayValue');
+
+// share param 'shValue' to all views
+// View::share('shValue','Hallo leuter');
+View::share('shValue',array('say'=>'Hallo', 'person'=>'VHD'));

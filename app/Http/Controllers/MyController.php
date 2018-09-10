@@ -110,4 +110,10 @@ class MyController extends Controller
     	return view('myView.subView'); 	// the 'myView.subView'' means that the subView.php file inside the views/myView folder 
     }
 
+    public function displayValue($val){
+    	// transfer param 'value' to the homepage.php
+    	return view('homepage',['value'=>$val*2, 'valuex3'=>$val*3]);
+
+    }
+
 }
