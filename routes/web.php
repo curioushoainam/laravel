@@ -90,3 +90,6 @@ Route::get('callFormDemo', function(){
 Route::post('postForm',['as'=>'postDemo', 'uses'=>'MyController@postDemo']);
 
 // ================================
+// Use cookie
+Route::get('setCookie','MyController@setCookie');
+Route::get('getCookie','MyController@getCookie');

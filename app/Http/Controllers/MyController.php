@@ -4,17 +4,11 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Response; 	// hnhd code
 use Illuminate\Http\Request;
 
 class MyController extends Controller
 {
-	public function viewArr($arr){
-		// this function displays $arr's content on the browser
-		echo '<pre>';
-    	print_r ($arr);
-    	echo '</pre>';
-	}
-
     public function Hello($name){
     	echo "Hallo ".$name;
     }
@@ -57,6 +51,20 @@ class MyController extends Controller
     	$this->viewArr($req->all());		// display $req's contents on the browser.
 
     	return 'Data is '.$req->txtname;
+    }
+
+    public function setCookie(){
+    	// this function set a cookie 
+    	$resp = new Response;
+    	echo 'Set up a cookie';
+    	$resp->withCookie("vhd","hallo HDHN", 0.2); 
+    	// that is named "vhd" and contains "hallo HDHN" and live in 0.2 minutes   	
+    	return $resp;
+    }
+
+    public function getCookie(Request $req){
+    	return $req->cookie("vhd");
+    	// return value which is stored in the cookie "vhd"
     }
 
 
