@@ -117,12 +117,13 @@ class MyController extends Controller
     }
 
     public function displayBladeDemo($str){
+        $course = "<i>Learning Laravel</i>";
         if($str == 'laravel')
         	// display the laravel page on the browser
-        	return view('pages.laravel');
+        	return view('pages.laravel',['course'=>$course]);
         if ($str == 'php')
             // display the php page on the browser
-            return view('pages.php');
+            return view('pages.php',['course'=>$course]);
     }
     
 
