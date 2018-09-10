@@ -116,4 +116,14 @@ class MyController extends Controller
 
     }
 
+    public function displayLaravel(){
+    	// display the laravel page on the browser
+    	return view('pages.laravel');
+    }
+
+    public function displayPhp(){
+        // display the php page on the browser
+        return view('pages.php');
+    }
+
 }

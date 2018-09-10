@@ -115,3 +115,10 @@ Route::get('myValue/{val}','MyController@displayValue');
 // share param 'shValue' to all views
 // View::share('shValue','Hallo leuter');
 View::share('shValue',array('say'=>'Hallo', 'person'=>'VHD'));
+
+// ================================
+// introduce blade template
+// the pages will use the layouts/mainlayout for displaying on the browser
+Route::get('laravel', 'MyController@displayLaravel');
+Route::get('php', 'MyController@displayPhp');
+
