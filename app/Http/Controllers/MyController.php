@@ -54,7 +54,7 @@ class MyController extends Controller
     }
 
     public function setCookie(){
-    	// this function set a cookie 
+    	// the function set a cookie 
     	$resp = new Response;
     	echo 'Set up a cookie';
     	$resp->withCookie("vhd","hallo HDHN", 0.2); 
@@ -65,6 +65,41 @@ class MyController extends Controller
     public function getCookie(Request $req){
     	return $req->cookie("vhd");
     	// return value which is stored in the cookie "vhd"
+    }
+
+    public function viewUploadDemo(){
+    	// the function display file uploadDemo on the browser
+    	return view('uploadDemo');
+    }
+
+    public function fileUploadPost(Request $req){
+    	// the function upload chosen file to the folder public/migs
+    	
+    	$this->viewArr($req->file('myFile'));
+    	// $req->file('myFile')->getClientSize() => return file's size in byte
+    	// $req->file('myFile')->getClientMimeType() => return file's type
+    	// $req->file('myFile')->getClientOriginalName() => return file's name
+    	// $req->file('myFile')->getClientOriginalExtension() => return file's extention
+    	// $req->file('myFile')->isValid() => return TRUE if the file is uploaded to temporary location successfully
+
+    	// 1. Check whether the file is available
+    	if($req->hasFile('myFile')){
+    		// 'myFile' is the name of input on the 'uploadDemo' file
+    		$imageName = $req->file('myFile')->getClientOriginalName();
+    		$result = $req->file('myFile')->move(
+    			public_path('imgs'),		// where to store the file
+    			$imageName		// new filename
+    		);
+
+    		// $result contains the specified path of uploaded file    		
+    		echo 'result is '.$result;
+    		// result is C:\wamp64\www\Laravel\myLaravel\public\imgs\1536568997.png
+
+    	} else {
+    		echo 'File is unavailable';
+    	} 
+
+
     }
 
 

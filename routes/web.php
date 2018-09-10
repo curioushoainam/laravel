@@ -82,7 +82,7 @@ Route::get('callReqURL','MyController@GetURL');
 
 // ================================
 // call formDemo page
-Route::get('callFormDemo', function(){
+Route::get('viewFormDemo', function(){
 	return view('formDemo');
 });
 
@@ -93,3 +93,10 @@ Route::post('postForm',['as'=>'postDemo', 'uses'=>'MyController@postDemo']);
 // Use cookie
 Route::get('setCookie','MyController@setCookie');
 Route::get('getCookie','MyController@getCookie');
+
+// ================================
+// demo upload file
+Route::get('viewUploadDemo', 'MyController@viewUploadDemo');
+
+Route::post('file-upload','MyController@fileUploadPost')->name('files.upload');
+// ================================
