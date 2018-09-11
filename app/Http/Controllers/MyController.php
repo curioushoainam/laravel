@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Response; 	// hnhd code
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Schema;
 
 class MyController extends Controller
 {
@@ -124,6 +125,23 @@ class MyController extends Controller
         if ($str == 'php')
             // display the php page on the browser
             return view('pages.php',['course'=>$course]);
+    }
+
+    public function createTable(){
+       
+        // the function creates a table on database
+        // name: loaisanpham
+        // columns : id, ten
+        if (Schema::hasTable('loaisanpham')) {
+            return 'the table is available';
+        } else {
+            Schema::create('loaisanpham', function($table){
+                $table->increments('id');            
+                $table->string('ten',50)->nullable();
+            });
+            return 'Already created the table';
+        }
+        
     }
     
 

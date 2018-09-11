@@ -121,4 +121,6 @@ View::share('shValue',array('say'=>'Hallo', 'person'=>'VHD'));
 // the pages will use the layouts/mainlayout for displaying on the browser
 Route::get('bladeDemo/{str}', 'MyController@displayBladeDemo');
 
-
+// ================================
+// demo creating table on database
+Route::get('dbhandle', 'MyController@createTable');
