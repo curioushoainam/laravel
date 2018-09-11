@@ -123,4 +123,9 @@ Route::get('bladeDemo/{str}', 'MyController@displayBladeDemo');
 
 // ================================
 // demo creating table on database
-Route::get('dbhandle', 'MyController@createTable');
+Route::get('createtbl', 'MyController@createTable');
+Route::get('createtbl1', 'MyController@createTable1');
+Route::get('droptbl1', 'MyController@dropTable1');
+
+
+

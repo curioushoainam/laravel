@@ -143,6 +143,38 @@ class MyController extends Controller
         }
         
     }
+
+    // Schema function ->  https://laravel.com/docs/5.0/schema
+    public function createTable1(){
+       
+        // the function creates a table on database
+        // name: sanpham
+        // columns : id, ten, gia, soluong, lsp_id
+        if (Schema::hasTable('sanpham')) {
+            return 'the table is available';
+        } else {
+            Schema::create('sanpham', function($table){
+                $table->increments('id');            
+                $table->string('ten')->nullable();
+                $table->integer('gia')->default(0);
+                $table->integer('soluong')->default(0);
+                $table->integer('lsp_id')->unsigned();
+                $table->foreign('lsp_id')->references('id')->on('loaisanpham')->onDelete('cascade');
+            });
+            return 'Already created the table';
+        }
+        
+    }
+
+    public function dropTable1(){
+        if (Schema::hasTable('sanpham')) {
+            //Schema::drop('sanpham');
+            Schema::dropIfExists('sanpham');
+            return 'Already dropped the table';            
+        } else {
+            return 'the table is unavailable';
+        }
+    }
     
 
 }
