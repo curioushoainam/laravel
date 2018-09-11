@@ -184,4 +184,10 @@ class MyController extends Controller
         $this->viewArr($data);
     }
 
+    public function getUser($tbl='users'){
+        // the function gets all data on the table $tbl
+        $data = DB::table($tbl)->select(DB::raw('id, name as hoten,email'))->where('id','>',0)->orderBy('id','desc')->skip(1)->take(2)->get();
+        $this->viewArr($data);
+    }
+
 }

@@ -131,3 +131,5 @@ Route::get('droptbl1', 'MyController@dropTable1');
 // demo query data from the database
 Route::get('qb/get/{tbl}','MyController@getUsers');
 
+Route::get('qb/qr','MyController@getUser');
+
