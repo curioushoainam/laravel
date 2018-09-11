@@ -133,3 +133,9 @@ Route::get('qb/get/{tbl}','MyController@getUsers');
 
 Route::get('qb/qr','MyController@getUser');
 
+Route::get('qb/update','MyController@update');
+
+Route::get('qb/delete','MyController@delete');
+
+Route::get('qb/truncate','MyController@truncate');
+

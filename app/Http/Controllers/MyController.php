@@ -190,4 +190,22 @@ class MyController extends Controller
         $this->viewArr($data);
     }
 
+    public function update($tbl='users'){
+        // the function update item #1 the table $tbl
+        $result = DB::table($tbl)->where('id',1)->update(['name'=>'VHD','email'=>'vhd@xmail.com']);
+        $this->viewArr($result);    // returned data is true/false
+    }
+
+    public function delete($tbl='users'){
+        // the function delete item #1 the table $tbl
+        $result = DB::table($tbl)->where('id',1)->delete();
+        $this->viewArr($result);    // returned data is true/false
+    }
+
+    public function truncate($tbl='users'){
+        // the function clears all data on the table $tbl and increment data returns to 0
+        $result = DB::table($tbl)->truncate();
+        $this->viewArr($result);    // no returned data
+    }
+
 }
