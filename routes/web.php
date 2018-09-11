@@ -139,3 +139,8 @@ Route::get('qb/delete','MyController@delete');
 
 Route::get('qb/truncate','MyController@truncate');
 
+// ================================
+// demo model with the database
+Route::get('model/save', 'MyController@mdsave');
+
+Route::get('model/qr', 'MyController@mdqr');

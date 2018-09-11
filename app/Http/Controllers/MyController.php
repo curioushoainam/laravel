@@ -208,4 +208,24 @@ class MyController extends Controller
         $this->viewArr($result);    // no returned data
     }
 
+   
+    public function mdsave(){
+        // the function inserts new data into the table users
+        $user = new \App\User();
+
+        $user->name = 'nld';
+        $user->email = 'nld@xmail.com';
+        $user->password = encrypt('123456');
+
+        $result = $user->save();
+        $this->viewArr($result);    // returned data is true/false
+    }
+
+    public function mdqr(){
+        // the function get data on the table users
+        $user = \App\User::find(7);     // look for item #id=7    
+        $this->viewArr($user);
+
+    }    
+
 }
