@@ -127,5 +127,7 @@ Route::get('createtbl', 'MyController@createTable');
 Route::get('createtbl1', 'MyController@createTable1');
 Route::get('droptbl1', 'MyController@dropTable1');
 
-
+// ================================
+// demo query data from the database
+Route::get('qb/get/{tbl}','MyController@getUsers');
 

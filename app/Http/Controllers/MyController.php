@@ -8,6 +8,8 @@ use Illuminate\Http\Response; 	// hnhd code
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Schema;
 
+use DB;
+
 class MyController extends Controller
 {
     public function Hello($name){
@@ -176,5 +178,10 @@ class MyController extends Controller
         }
     }
     
+    public function getUsers($tbl){
+        // the function gets all data on the table $tbl
+        $data = DB::table($tbl)->get();
+        $this->viewArr($data);
+    }
 
 }
