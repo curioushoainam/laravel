@@ -28,7 +28,7 @@
 	<li>{{$i3}}</li>	
 @endfor --}}
 
-{{-- @php() = @php @endphp // --}}
+{{-- @php() = @php @endphp // --}} 
 @php($arr = array("HTML","CSS","JS","PHP","Laravel"))
 
 {{-- @if(!empty($arr))
