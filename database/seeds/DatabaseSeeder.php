@@ -1,4 +1,5 @@
 <?php
+// php artisan db:seed 			=> implement seeder
 
 use Illuminate\Database\Seeder;
 
@@ -12,5 +13,17 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
+        $this->call(userSeeder::class);
     }
+}
+
+// hnhd code
+class userSeeder extends Seeder {
+	public function run(){
+		DB::table('users')->insert([
+			['name'=>'hnhd', 'email'=>'hnhd@gmail.com', 'password'=>bcrypt('123456')],
+			['name'=>'Laravel', 'email'=>str_random(5).'@gmail.com', 'password'=>bcrypt('123456')],
+			['name'=>'PHP', 'email'=>str_random(5).'@gmail.com', 'password'=>bcrypt('123456')]
+		]);
+	}
 }
