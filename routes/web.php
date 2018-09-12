@@ -144,3 +144,10 @@ Route::get('qb/truncate','MyController@truncate');
 Route::get('model/save', 'MyController@mdsave');
 
 Route::get('model/qr', 'MyController@mdqr');
+
+
+
+
+// ================================
+// demo $_GET multiple parameters /?name=hn&lastname=hd
+Route::get('/','MyController@input');

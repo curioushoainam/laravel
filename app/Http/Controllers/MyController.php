@@ -4,10 +4,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Response; 	// hnhd code
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Schema;
 
+// hnhd code
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Input;
 use DB;
 
 class MyController extends Controller
@@ -227,5 +229,13 @@ class MyController extends Controller
         $this->viewArr($user);
 
     }    
+
+    public function input(){
+        // the function demos $_GET multiple parameters /?name=hn&lastname=hd
+        //$this->viewArr(Input::all());
+        echo Input::get('name');
+        echo '<br>';
+        echo Input::get('lastname'); 
+    }
 
 }
