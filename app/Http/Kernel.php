@@ -56,5 +56,9 @@ class Kernel extends HttpKernel
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+
+        // register middleware demoMiddleware with name "checkgrade"
+        // the name 'checkgrade' will assign into the route which need to check
+        'checkgrade' => \App\Http\Middleware\demoMiddleware::class,
     ];
 }

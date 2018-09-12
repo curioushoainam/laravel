@@ -167,5 +167,17 @@ Route::get('lsplinksp/{lsp_id}', 'MyController@lsplinksp');
 // demo $_GET multiple parameters /?name=hn&lastname=hd
 Route::get('/','MyController@input');
 
+// ================================
+// demo Middleware
+Route::get('pass',function(){
+	echo "Your grade is equal or greater than 5 => You passed";
+})->middleware('checkgrade')->name('pass');
 
+Route::get('fail',function(){
+	echo "You failed";
+})->name('fail');
 
+Route::get('yourgrade',function(){
+	// the function returns the interface to input your grade
+	return view('yourgrade');
+})->name('yourgrade');
