@@ -142,8 +142,23 @@ Route::get('qb/truncate','MyController@truncate');
 // ================================
 // demo model with the database
 Route::get('model/save', 'MyController@mdsave');
-
 Route::get('model/qr', 'MyController@mdqr');
+
+// insert $lsp into the table
+Route::get('model/loaisanpham/save/{lsp}', 'MyController@mdinsrt');
+// get data from the table
+Route::get('model/loaisanpham/', 'MyController@mdgetall');
+// get data from the table with queryBuilder
+Route::get('model/loaisanpham/{id}', 'MyController@mdgetqrbd');
+// get data from the table with multiple queryBuilder commands
+Route::get('model/loaisanphamwmqrbd', 'MyController@mdgetmqrbd');
+
+// delete item $id on the table
+Route::get('model/loaisanpham/delete/{id}', 'MyController@mddel');
+// delete item $name on the table
+Route::get('model/loaisanpham/delete2/{name}', 'MyController@mddel2');
+
+
 
 
 

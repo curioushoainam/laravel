@@ -212,6 +212,7 @@ class MyController extends Controller
 
    
     public function mdsave(){
+        // model function
         // the function inserts new data into the table users
         $user = new \App\User();
 
@@ -224,6 +225,7 @@ class MyController extends Controller
     }
 
     public function mdqr(){
+        // model function
         // the function get data on the table users
         $user = \App\User::find(7);     // look for item #id=7    
         $this->viewArr($user);
@@ -237,5 +239,70 @@ class MyController extends Controller
         echo '<br>';
         echo Input::get('lastname'); 
     }
+
+    public function mdinsrt($lsp){
+        // the function insert $lsp into the table
+        $loaisanpham = new \App\loaisanpham();
+
+        $loaisanpham->ten = $lsp;
+
+        $result = $loaisanpham->save();
+        if($result) 
+            echo 'Insert ' . $lsp . ' successfully.';
+        else
+            echo 'Failed to insert ' . $lsp;
+    }
+
+    public function mdgetall(){    
+        // the function get all data from the table
+        $loaisanpham = new \App\loaisanpham();
+
+        // $data = $loaisanpham::all();
+        // $data = $loaisanpham::all()->toJson();
+        $data = $loaisanpham::all()->toArray();
+        $this->viewArr($data);
+    }
+
+    public function mdgetqrbd($id){
+        // the function get data of $id from the table
+        $loaisanpham = new \App\loaisanpham();
+
+        // $data = $loaisanpham::where('id',$id);
+        // $data = $loaisanpham::where('id',$id)->get()->toJson();
+        $data = $loaisanpham::where('id',$id)->get()->toArray();
+        $this->viewArr($data);
+    }
+
+    public function mdgetmqrbd(){
+        // the function get all data from the table
+        $loaisanpham = new \App\loaisanpham();        
+        
+        $data = $loaisanpham::where('id','!=',0)->orderBy('ten','desc')->get()->toArray();
+        $this->viewArr($data);
+    }
+
+    public function mddel($id){
+        // the function delete item $id on the table
+        $loaisanpham = new \App\loaisanpham();
+
+        $result = $loaisanpham::destroy($id);
+        if($result) 
+            echo 'Delete ' . $id . ' successfully.';
+        else
+            echo 'Failed to delete ' . $id;
+    }
+
+    public function mddel2($name){
+        // the function delete item $id on the table
+        $loaisanpham = new \App\loaisanpham();
+
+        $result = $loaisanpham::where('ten',$name)->delete();
+        if($result) 
+            echo 'Delete ' . $name . ' successfully.';
+        else
+            echo 'Failed to delete ' . $name;
+    }
+
+
 
 }
