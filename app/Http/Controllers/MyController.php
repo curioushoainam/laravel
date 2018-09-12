@@ -303,6 +303,25 @@ class MyController extends Controller
             echo 'Failed to delete ' . $name;
     }
 
+    public function splinklsp($sp_id){
+        // link model sanpham to model loaisanpham
+        $data = \App\SanPham::find($sp_id)->loaisanpham->toArray();
+        if(isset($data) && $data){            
+            $this->viewArr($data);
+        }
+        else
+            echo 'Unavailable';
+    }
+
+    public function lsplinksp($lsp_id){
+        // link model loaisanpham to model sanpham
+        $data = \App\loaisanpham::find($lsp_id)->sanpham->toArray();
+        if(isset($data) && $data){            
+            $this->viewArr($data);
+        }
+        else
+            echo 'Unavailable';
+    }
 
 
 }

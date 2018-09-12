@@ -10,4 +10,8 @@ class loaisanpham extends Model
     protected $table = 'loaisanpham';
     // disable insert time value into the respective table.
     public $timestamps = false;
+
+    public function sanpham(){
+    	return $this->hasMany('\App\sanpham','lsp_id','id');
+    }
 }

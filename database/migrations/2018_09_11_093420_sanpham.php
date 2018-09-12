@@ -18,10 +18,13 @@ class Sanpham extends Migration
      */
     public function up()
     {
-        if (!Schema::hasTable('loaisanpham')) {        
-            Schema::create('loaisanpham', function($table){
+        if (!Schema::hasTable('sanpham')) {        
+            Schema::create('sanpham', function($table){
                 $table->increments('id');            
-                $table->string('ten',50)->nullable();
+                $table->string('ten',200)->nullable();
+                $table->string('gia',200)->nullable();
+                $table->string('soluong',200)->nullable();
+                $table->string('lsp_id',200)->nullable();
             });            
         }
     }
@@ -33,6 +36,6 @@ class Sanpham extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('loaisanpham');
+        Schema::dropIfExists('sanpham');
     }
 }

@@ -158,11 +158,14 @@ Route::get('model/loaisanpham/delete/{id}', 'MyController@mddel');
 // delete item $name on the table
 Route::get('model/loaisanpham/delete2/{name}', 'MyController@mddel2');
 
-
-
-
-
+// link model sanpham to model loaisanpham
+Route::get('splinklsp/{sp_id}', 'MyController@splinklsp');
+// link model loaisanpham to model sanpham
+Route::get('lsplinksp/{lsp_id}', 'MyController@lsplinksp');
 
 // ================================
 // demo $_GET multiple parameters /?name=hn&lastname=hd
 Route::get('/','MyController@input');
+
+
+
