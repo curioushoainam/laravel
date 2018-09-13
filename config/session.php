@@ -29,9 +29,10 @@ return [
     |
     */
 
-    'lifetime' => 120,
+    'lifetime' => 120,      // expired after 120 minutes
 
-    'expire_on_close' => false,
+
+    'expire_on_close' => true,  // expired once the browser closes
 
     /*
     |--------------------------------------------------------------------------

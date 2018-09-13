@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Input;
 use DB;
+use Session;
 
 class MyController extends Controller
 {
@@ -323,5 +324,28 @@ class MyController extends Controller
             echo 'Unavailable';
     }
 
+    public function session(){
+        // the function demos how to use SESSION
+        session::put('prglang',['PHP','Laravel']);
+        session::put('web','html, css, js');
+        session::flash('temp','Heuter ist es gut.');
+        echo 'Already set up session'.'<br>';
+
+        // session::forget('web');
+        // session::flush();
+
+        $this->viewArr(Session::get('prglang'));
+        $this->viewArr(Session::get('web'));
+
+        if(session::has('web'))
+            echo 'Session "web" is available';
+        else
+            echo 'Session "web" is UNavailable';
+    }
+
+    public function ssflash(){
+        // echo 'ssflash -> '.session::get('temp');
+        echo 'ssflash() -> '.session('temp');
+    }
 
 }
