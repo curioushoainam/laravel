@@ -199,5 +199,10 @@ Route::get('logout', 'AuthController@logout');		// using url doesn't need ->name
 
 // ===============================================
 // ===============================================
+// Demo session
 Route::get('session', 'MyController@session');
 Route::get('session/flash', 'MyController@ssflash');
+
+// ===============================================
+// demo pagination
+Route::get('news','NewsController@index');
