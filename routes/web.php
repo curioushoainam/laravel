@@ -181,3 +181,17 @@ Route::get('yourgrade',function(){
 	// the function returns the interface to input your grade
 	return view('yourgrade');
 })->name('yourgrade');
+
+// ================================
+// demo Authentication
+Route::get('loginform', function(){
+	return view('login');
+})->name('loginform');
+
+Route::post('login', 'AuthController@login')->name('login');
+
+Route::get('loginsuccessfully', function(){
+	return view('loginsuccessfully');
+})->name('loginsuccessfully');
+
+Route::get('logout', 'AuthController@logout');		// using url doesn't need ->name()
